@@ -2,6 +2,7 @@ services:
   app:
     image: codaxy/cx-reports-data-agent:latest
     restart: always
+    network_mode: host
     secrets:
       - source: appsettings_file
         target: /app/appsettings.Production.jsonc
