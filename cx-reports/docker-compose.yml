@@ -1,0 +1,31 @@
+services:
+  app:
+    image: codaxy/cx-reports:latest
+    depends_on:
+      - db
+    volumes:
+      - ./logs:/app/Logs
+    ports:
+      - "80:8080"
+    restart: always
+    secrets:
+      - source: appsettings_file
+        target: /app/appsettings.Production.json
+
+  # comment the following block if you already have a PostgreSQL database running
+  db:
+    image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: cx-reports
+      POSTGRES_USER: cx-reports
+      POSTGRES_PASSWORD: database-password # Replace with your database password
+    restart: always
+
+secrets:
+  appsettings_file:
+    file: ./appsettings.Production.jsonc
+
+volumes:
+  postgres_data:

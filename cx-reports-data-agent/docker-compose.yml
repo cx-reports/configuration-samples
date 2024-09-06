@@ -1,0 +1,7 @@
+services:
+  app:
+    image: codaxy/cx-reports-data-agent:latest
+    restart: always
+    secrets:
+      - source: appsettings_file
+        target: /app/appsettings.Production.jsonc

@@ -1,0 +1,47 @@
+{
+  /*
+  Connection string to the CxReports Postgres database. User and password should be replaced with the values from the docker-compose file.
+  */
+  "ConnectionStrings": {
+    "Database": "Host=db;Database=cx-reports;Username=cx-reports;Password=[enter-your-password]"
+  },
+
+  /*
+  User and password for the root user. This user is used to log in to the application for the first time. If the user already exists, this will be ignored.
+  */
+  "RootUser": {
+    "Email": "[email of the root user]",
+    "Password": "[password of the root user]",
+    "DisplayName": "[display name of the root user]"
+  },
+
+  /* 
+  The encryption key and initialization vector are used to encrypt sensitive data in the database. 
+  We recommend either using the default values (6F761C152A69C34B655BFF6226116AD4 for the 32-character key and A9B2BC02C2FDDE88 for the 16-character vector) 
+  or generating and securely storing your own key and vector for restoration purposes. 
+  */
+  "Encryption": {
+    "Key": "[encryption-key]", //i.e. 6F761C152A69C34B655BFF6226116AD4
+    "Vector": "[initialization vector]" //i.e. A9B2BC02C2FDDE88
+  }
+
+  /*
+  If the application is hosted under a subpath, this should be set to the subpath.
+  */
+  //"PathBase": "/",
+
+  /*
+  The optional SMTP server configuration used to send emails. The DegreeOfParallelism is the number reports that can be sent in parallel.
+  */
+  // "SmtpServer": {
+  //   "From": "no-reply@example.com",
+  //   "ReplyTo": "reply@example.com",
+  //   "DisplayName": "Company Report",
+  //   "Host": "smtp.example.com",
+  //   "Port": 25,
+  //   "Username": "username",
+  //   "Password": "password",
+  //   "EnableSsl": true,
+  //   "DegreeOfParallelism": 4
+  // }
+}

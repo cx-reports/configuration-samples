@@ -1,0 +1,11 @@
+{
+  "Tunnels": [
+    {
+      "ServerUrl": "[url-of-the-cx-reports-instance]",
+      "AllowServerProvidedConnectionStrings": false,
+      "ConnectionStrings": {
+        "DB1": "[database-connection-string]"
+      }
+    }
+  ]
+}
