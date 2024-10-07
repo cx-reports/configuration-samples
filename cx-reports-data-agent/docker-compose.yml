@@ -6,3 +6,7 @@ services:
     secrets:
       - source: appsettings_file
         target: /app/appsettings.Production.jsonc
+
+secrets:
+  appsettings_file:
+    file: ./appsettings.Production.jsonc
