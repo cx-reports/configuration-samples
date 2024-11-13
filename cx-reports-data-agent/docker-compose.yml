@@ -5,7 +5,7 @@ services:
     network_mode: host
     secrets:
       - source: appsettings_file
-        target: /app/appsettings.Production.jsonc
+        target: /app/appsettings.Production.json
 
 secrets:
   appsettings_file:
