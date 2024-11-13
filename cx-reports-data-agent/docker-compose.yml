@@ -6,6 +6,8 @@ services:
     secrets:
       - source: appsettings_file
         target: /app/appsettings.Production.json
+    volumes:
+      - ./data:/home/app
 
 secrets:
   appsettings_file:
