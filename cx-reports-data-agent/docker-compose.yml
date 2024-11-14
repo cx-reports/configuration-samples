@@ -7,7 +7,7 @@ services:
       - source: appsettings_file
         target: /app/appsettings.Production.json
     volumes:
-      - ./data:/home/app
+      - ./data:/root/.config/CxReports/DataAgent
 
 secrets:
   appsettings_file:
